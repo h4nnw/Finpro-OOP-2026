@@ -3,7 +3,7 @@ package com.GroupA.frontend.network;
 /**
  * Data Transfer Object (DTO) representing a single score record deserialized from Backend JSON.
  */
-public class ScoreEntry {
+public class LeaderBoardEntry {
 
     // =========================================================================
     // ATTRIBUTES (must match Backend Score JSON field names)
@@ -16,6 +16,6 @@ public class ScoreEntry {
     // =========================================================================
     // CONSTRUCTORS & GETTERS
     // =========================================================================
-    // TODO: Implement public no-arg constructor ScoreEntry() (required by LibGDX Json serializer)
+    // TODO: Implement public no-arg constructor LeaderBoardEntry() (required by LibGDX Json serializer)
     // TODO: Implement getters for scoreId, playerName, point, and createdAt
 }

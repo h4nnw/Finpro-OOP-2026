@@ -6,7 +6,7 @@ package com.GroupA.frontend.network;
  * the Spring Boot Score Backend, hiding LibGDX HTTP networking (Gdx.net), JSON serialization,
  * request timeouts, and render-thread callback marshaling (Gdx.app.postRunnable).
  */
-public class ScoreboardFacade {
+public class LeaderBoardFacade {
 
     // =========================================================================
     // CONSTANTS & ATTRIBUTES
@@ -19,7 +19,7 @@ public class ScoreboardFacade {
     // =========================================================================
     // CONSTRUCTOR
     // =========================================================================
-    // TODO: Implement ScoreboardFacade() constructor to initialize and configure the Json serializer
+    // TODO: Implement LeaderBoardFacade() constructor to initialize and configure the Json serializer
 
     // =========================================================================
     // FACADE PUBLIC API
@@ -27,12 +27,12 @@ public class ScoreboardFacade {
     // TODO: Implement + checkHealth(Consumer<Boolean> onResult) : void
     //       Send GET /api/health and pass true to onResult if HTTP 200 OK, false otherwise.
 
-    // TODO: Implement + submitScore(String playerName, long points, Consumer<ScoreEntry> onSaved, Consumer<String> onError) : void
+    // TODO: Implement + submitScore(String playerName, long points, Consumer<LeaderBoardEntry> onSaved, Consumer<String> onError) : void
     //       Clamp points to Integer range, serialize ScoreSubmission to JSON, send POST /api/scores,
-    //       and invoke onSaved with the parsed ScoreEntry on HTTP 201 CREATED (or onError on failure).
+    //       and invoke onSaved with the parsed LeaderBoardEntry on HTTP 201 CREATED (or onError on failure).
 
-    // TODO: Implement + fetchLeaderboard(int limit, Consumer<List<ScoreEntry>> onLoaded, Consumer<String> onError) : void
-    //       Send GET /api/scores/leaderboard?limit=N, parse JSON array of ScoreEntry, and pass list to onLoaded.
+    // TODO: Implement + fetchLeaderboard(int limit, Consumer<List<LeaderBoardEntry>> onLoaded, Consumer<String> onError) : void
+    //       Send GET /api/scores/leaderboard?limit=N, parse JSON array of LeaderBoardEntry, and pass list to onLoaded.
 
     // =========================================================================
     // INTERNAL NETWORK & THREADING HELPERS
