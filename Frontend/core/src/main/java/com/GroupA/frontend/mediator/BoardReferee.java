@@ -13,7 +13,7 @@ public class BoardReferee implements GameMediator {
     // TODO: Declare - tilePool : TilePool
     // TODO: Declare - inputHandler : InputHandler
     // TODO: Declare any referee state needed for gameplay (e.g., currently selected first Tile,
-    //       game-over / board-cleared flags for Main to trigger ScoreboardFacade submission)
+    //       game-over / board-cleared flags for Main to trigger LeaderBoardFacade submission)
 
     // =========================================================================
     // CONSTRUCTOR

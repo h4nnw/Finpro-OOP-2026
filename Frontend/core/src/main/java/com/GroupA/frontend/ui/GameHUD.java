@@ -5,7 +5,7 @@ import com.GroupA.frontend.observer.BoardObserver;
 /**
  * Design Pattern: Observer (Concrete Observer)
  * Displays game status (score, remaining tiles, shuffle button, timer) and the end-of-run
- * leaderboard fetched via ScoreboardFacade.
+ * leaderboard fetched via LeaderBoardFacade.
  */
 public class GameHUD implements BoardObserver {
 
@@ -39,8 +39,8 @@ public class GameHUD implements BoardObserver {
     // TODO: Implement + setScoreboardStatus(String status) : void
     //       Display network status messages (e.g., "Saving score...", "Saved as <player>", "Scoreboard offline").
 
-    // TODO: Implement + showLeaderboard(List<ScoreEntry> entries) : void
-    //       Format and store the top ScoreEntry records returned by ScoreboardFacade.fetchLeaderboard(...).
+    // TODO: Implement + showLeaderboard(List<LeaderBoardEntry> entries) : void
+    //       Format and store the top LeaderBoardEntry records returned by LeaderBoardFacade.fetchLeaderboard(...).
 
     // TODO: Implement + clearScoreboard() : void
     //       Clear leaderboard lines and status when restarting a new Mahjong game.

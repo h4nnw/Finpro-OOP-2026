@@ -12,7 +12,7 @@ public class Main extends ApplicationAdapter {
     // ATTRIBUTES & SCOREBOARD CONSTANTS
     // =========================================================================
     // TODO: Declare player/leaderboard constants & state (e.g., PLAYER_NAME, LEADERBOARD_SIZE = 5,
-    //       ScoreboardFacade scoreboard, boolean scoreSubmitted)
+    //       LeaderBoardFacade scoreboard, boolean scoreSubmitted)
     // TODO: Declare rendering tools (e.g., SpriteBatch / Stage) and core game components
     //       (TilePool, MahjongBoard, InputHandler, BoardReferee, GameHUD)
 
@@ -24,7 +24,7 @@ public class Main extends ApplicationAdapter {
     //       2. Instantiate TilePool, MahjongBoard, InputHandler, and GameHUD
     //       3. Register GameHUD as a BoardObserver on MahjongBoard
     //       4. Instantiate BoardReferee (GameMediator) to connect MahjongBoard, TilePool, and InputHandler
-    //       5. Instantiate ScoreboardFacade (Facade connecting Frontend to Backend REST API)
+    //       5. Instantiate LeaderBoardFacade (Facade connecting Frontend to Backend REST API)
 
     // TODO: Override + render() : void
     //       1. Handle game restart input (reset board, reset scoreSubmitted = false, call gameHUD.clearScoreboard())
