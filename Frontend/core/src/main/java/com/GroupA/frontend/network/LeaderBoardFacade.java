@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class ScoreboardFacade {
+public class LeaderBoardFacade {
     private static final String BASE_URL = "http://localhost:8080/api";
     private static final int TIMEOUT_MS = 3000;
 
     private final Json json;
 
-    public ScoreboardFacade() {
+    public LeaderBoardFacade() {
         json = new Json();
         json.setOutputType(JsonWriter.OutputType.json);
         json.setUsePrototypes(false);
@@ -46,7 +46,7 @@ public class ScoreboardFacade {
             err -> onResult.accept(false));
     }
 
-    public void submitScore(String playerName, long points, Consumer<ScoreEntry> onSaved, Consumer<String> onError) {
+    public void submitScore(String playerName, long points, Consumer<LeaderBoardEntry> onSaved, Consumer<String> onError) {
         int point = (int) Math.max(0L, Math.min((long) Integer.MAX_VALUE, points));
 
         HttpRequest request = new HttpRequestBuilder().newRequest()
@@ -59,7 +59,7 @@ public class ScoreboardFacade {
 
         send(request, (status, body) -> {
             if (status == HttpStatus.SC_CREATED) {
-                onSaved.accept(json.fromJson(ScoreEntry.class, body));
+                onSaved.accept(json.fromJson(LeaderBoardEntry.class, body));
             } else {
                 onError.accept("Submit failed (HTTP " + status + ")");
             }
@@ -67,13 +67,13 @@ public class ScoreboardFacade {
     }
 
     @SuppressWarnings("unchecked")
-    public void fetchLeaderboard(int limit, Consumer<List<ScoreEntry>> onLoaded, Consumer<String> onError) {
+    public void fetchLeaderboard(int limit, Consumer<List<LeaderBoardEntry>> onLoaded, Consumer<String> onError) {
         send(get("/scores/leaderboard?limit=" + limit), (status, body) -> {
             if (status == HttpStatus.SC_OK) {
-                Array<ScoreEntry> entries = json.fromJson(Array.class, ScoreEntry.class, body);
-                List<ScoreEntry> result = new ArrayList<>();
+                Array<LeaderBoardEntry> entries = json.fromJson(Array.class, LeaderBoardEntry.class, body);
+                List<LeaderBoardEntry> result = new ArrayList<>();
                 if (entries != null) {
-                    for (ScoreEntry entry : entries) {
+                    for (LeaderBoardEntry entry : entries) {
                         result.add(entry);
                     }
                 }
@@ -120,8 +120,8 @@ public class ScoreboardFacade {
 
             @Override
             public void failed(Throwable t) {
-                System.out.println("[ScoreboardFacade] Backend unreachable: " + t.getMessage());
-                onRenderThread(() -> onError.accept("Scoreboard offline"));
+                System.out.println("[LeaderBoardFacade] Backend unreachable: " + t.getMessage());
+                onRenderThread(() -> onError.accept("Leaderboard offline"));
             }
 
             @Override
