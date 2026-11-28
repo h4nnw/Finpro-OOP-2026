@@ -11,4 +11,6 @@ public interface GameMediator {
     // =========================================================================
     // TODO: Declare + notify(sender, event) : void
     //       Receive event notifications from colleague objects and coordinate game actions.
+    // woy yg buat ai banget xixixi
+    void notify(Object sender, String event);
 }
