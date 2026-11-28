@@ -13,7 +13,7 @@ public class MahjongBoard {
     // TODO: Declare - mediator : GameMediator
     // TODO: Declare - observers : List<BoardObserver>
     // TODO: Declare - activeTiles : List<Tile>
-    // TODO: Declare - score : long (tracks current run score for GameHUD and ScoreboardFacade)
+    // TODO: Declare - score : long (tracks current run score for GameHUD and LeaderBoardFacade)
     // TODO: Declare run-end state helpers (e.g., isBoardCleared() when activeTiles is empty,
     //       or isNoMovesLeft() when no free matching pairs remain)
 
